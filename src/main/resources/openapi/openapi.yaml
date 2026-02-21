@@ -32,9 +32,9 @@ paths:
         "200":
           description: Successful response
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                $ref: "#/components/schemas/Hello2Response"
 components:
   schemas:
     Hello2Request:
@@ -45,3 +45,13 @@ components:
         name:
           type: string
           maxLength: 256
+    Hello2Response:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string

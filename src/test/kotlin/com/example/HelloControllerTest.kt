@@ -23,13 +23,15 @@ class HelloControllerTest(@Autowired val mockMvc: MockMvc) {
     }
 
     @Test
-    fun `POST hello2 で名前付きの挨拶が返る`() {
+    fun `POST hello2 で id と input_name が返る`() {
         mockMvc.post("/hello2") {
             contentType = MediaType.APPLICATION_JSON
             content = """{"name": "Alice"}"""
         }.andExpect {
             status { isOk() }
-            content { string("Hello, Alice!") }
+            content { contentType(MediaType.APPLICATION_JSON) }
+            jsonPath("$.id") { isNotEmpty() }
+            jsonPath("$.name") { value("Alice") }
         }
     }
 
@@ -62,7 +64,8 @@ class HelloControllerTest(@Autowired val mockMvc: MockMvc) {
             content = """{"name": "$name"}"""
         }.andExpect {
             status { isOk() }
-            content { string("Hello, $name!") }
+            jsonPath("$.id") { isNotEmpty() }
+            jsonPath("$.name") { value(name) }
         }
     }
 }
