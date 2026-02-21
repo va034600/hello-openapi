@@ -2,6 +2,12 @@
 
 OpenAPI コントラクトファーストで構築した Spring Boot アプリケーション。
 
+## API ドキュメント
+
+https://va034600.github.io/hello-openapi/
+
+GitHub Pages で Swagger UI をホスティングしています。
+
 ## 前提条件
 
 - JDK 17+
