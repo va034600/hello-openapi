@@ -1,0 +1,47 @@
+openapi: "3.0.3"
+info:
+  title: Hello API
+  version: "1.0.0"
+paths:
+  /hello:
+    get:
+      tags:
+        - Hello
+      summary: Say hello
+      operationId: hello
+      responses:
+        "200":
+          description: Successful response
+          content:
+            text/plain:
+              schema:
+                type: string
+  /hello2:
+    post:
+      tags:
+        - Hello
+      summary: Say hello with name
+      operationId: hello2
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Hello2Request"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            text/plain:
+              schema:
+                type: string
+components:
+  schemas:
+    Hello2Request:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          maxLength: 256
