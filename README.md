@@ -2,11 +2,17 @@
 
 OpenAPI コントラクトファーストで構築した Spring Boot アプリケーション。
 
-## API ドキュメント
+## Swagger UI（ローカル）
+
+アプリ起動後、ブラウザで以下にアクセスすると Swagger UI が表示される。API の実行もそのまま可能。
+
+http://localhost:8080/swagger-ui/index.html
+
+## API ドキュメント（GitHub Pages）
 
 https://va034600.github.io/hello-openapi/
 
-GitHub Pages で Swagger UI をホスティングしています。
+GitHub Pages で Swagger UI をホスティング（要 Pages 設定: Source `main` / `/docs`）。
 
 ## 前提条件
 
